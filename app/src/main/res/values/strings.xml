@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Citizens Complaints</string>
+    <string name="complaints">Complaints</string>
+    <string name="the_official_replied_the_right_of_the_sponsored">The official replied the right of the sponsored</string>
+    <string name="to_receive_complaints_from_citizens">To receive complaints from citizens</string>
+    <string name="follow_complaints">Follow Complaints</string>
+    <string name="new_complaints">New Complaints</string>
+    <string name="welcome_to_citizens_complaints">Welcome To Citizens Complaints</string>
+    <string name="new_user">New User</string>
+    <string name="address">Address :</string>
+    <string name="citizens_name">Citizens Name :</string>
+    <string name="national_id">National Id :</string>
+    <string name="password">Password :</string>
+    <string name="phone">Phone :</string>
+    <string name="register_new_user">Register New User</string>
+    <string name="register">Register</string>
+    <string name="follow_your_complaints">To Follow Your Complaints</string>
+    <string name="query">Query</string>
+    <string name="citizens_id">National ID :</string>
+    <string name="complaint_number">Complaint Number :</string>
+    <string name="attachment">Attachment</string>
+    <string name="small_description">Small Description</string>
+    <string name="send">Send</string>
+    <string name="name_of_institution">Name of Institution</string>
+    <string name="subject">Subject</string>
+    <string name="attach">Attach</string>
+    <string name="enter_id">Please Enter Your  Id</string>
+    <string name="enter_name">Please Enter Your Name</string>
+    <string name="enter_phone">Please Enter Your Phone</string>
+    <string name="enter_address">Please Enter Your Address</string>
+    <string name="wait">^^...Please Wait...^^</string>
+    <string name="op_notsucc">Not Successful</string>
+</resources>

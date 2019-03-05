@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "909329781854",
+    "firebase_url": "https://complaints-39182.firebaseio.com",
+    "project_id": "complaints-39182",
+    "storage_bucket": "complaints-39182.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909329781854:android:6e07477250018df2",
+        "android_client_info": {
+          "package_name": "com.example.shahi.citizenscomplaints"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909329781854-vp3qoo8o8benggbnr82b883h41frqda2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shahi.citizenscomplaints",
+            "certificate_hash": "0dc8083f576dbd90461d6be782eac40ecccdf849"
+          }
+        },
+        {
+          "client_id": "909329781854-7vo53d7m0ovdpb1jdcb1hbvtfeb900rh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shahi.citizenscomplaints",
+            "certificate_hash": "087c3cd7c2d5fe8d611337889119ce5d1d7adbcf"
+          }
+        },
+        {
+          "client_id": "909329781854-dog6vbpvbfqrq7m5d1e5968ktv86a7ge.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shahi.citizenscomplaints",
+            "certificate_hash": "6cdd8284b7d9dbcdb3045b24e670800746b6b690"
+          }
+        },
+        {
+          "client_id": "909329781854-9aj0gbvcnfgq6jo6b4vdpahb05s1kkf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3sJV-ynoyx0YtHS5WXDbzlo63ZT2QMYI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909329781854-9aj0gbvcnfgq6jo6b4vdpahb05s1kkf1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
