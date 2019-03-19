@@ -26,7 +26,6 @@
         <activity android:name=".Home" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />
-        <activity android:name=".NewCom" />
         <activity android:name=".NewComp" />
         <activity android:name=".Profile"></activity>
     </application>

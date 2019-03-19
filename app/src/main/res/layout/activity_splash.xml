@@ -10,14 +10,15 @@
     <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp">
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
             android:id="@+id/logo"
@@ -25,7 +26,7 @@
             android:layout_height="180dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="84dp"
             android:background="@drawable/log"
             tools:ignore="ContentDescription" />
 
@@ -33,13 +34,13 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/logo"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="21dp"
             android:text="@string/complaints"
             android:textColor="#300953"
             android:textSize="25sp"
-            android:textStyle="bold"
-            android:layout_below="@+id/logo"
-            android:layout_centerHorizontal="true" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView1"
@@ -53,22 +54,22 @@
             android:textColor="#4aaeb7"
             android:textSize="20sp"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="35dp"
             android:gravity="center"
             android:text="@string/the_official_replied_the_right_of_the_sponsored"
             android:textColor="#300953"
-            android:textSize="15sp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="35dp" />
-
+            android:textSize="15sp" />
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
@@ -82,6 +83,8 @@
             android:layout_marginRight="161dp"
             android:layout_marginBottom="93dp"
             app:srcCompat="@drawable/flag" />
+
+
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

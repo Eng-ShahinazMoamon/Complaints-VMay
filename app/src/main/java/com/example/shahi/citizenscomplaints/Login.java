@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Login extends AppCompatActivity implements View.OnClickListener{
     private EditText idNo , phNo;
     private Button btLog;
-    private FirebaseAuth firebaseAuthLog;
+    public FirebaseAuth firebaseAuthLog;
     private ProgressDialog progressDialog;
 
     @Override

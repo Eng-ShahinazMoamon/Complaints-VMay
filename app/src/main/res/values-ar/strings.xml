@@ -31,4 +31,17 @@
     <string name="enter_address">فضلا ادخل عنوانك</string>
     <string name="wait">^^...فضلا انتظر قليلا...^^</string>
     <string name="op_notsucc">عفوا لم تتم العملية بنجاح</string>
+    <string-array name="Contacts">
+        <item>الوحدات المحلية</item>
+        <item>الاسكان</item>
+        <item>الكهرباء</item>
+        <item>التربية والتعليم</item>
+        <item>التموين</item>
+        <item>الصحة</item>
+        <item>الشؤون الاجتماعية</item>
+        <item>شركات المياة والصرف الصحي</item>
+        <item>المنطقة الازهرية</item>
+        <item>اخري</item>
+    </string-array>
+
 </resources>
