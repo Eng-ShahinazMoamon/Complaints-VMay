@@ -27,7 +27,8 @@
         <activity android:name=".Register" />
         <activity android:name=".Login" />
         <activity android:name=".NewComp" />
-        <activity android:name=".Profile"></activity>
+        <activity android:name=".Profile" />
+        <activity android:name=".Admin"></activity>
     </application>
 
 </manifest>

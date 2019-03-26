@@ -43,5 +43,6 @@
         <item>المنطقة الازهرية</item>
         <item>اخري</item>
     </string-array>
+    <string name="admin">"المسؤول "</string>
 
 </resources>

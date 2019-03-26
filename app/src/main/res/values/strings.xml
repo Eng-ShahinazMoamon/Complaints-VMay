@@ -30,6 +30,7 @@
     <string name="enter_address">Please Enter Your Address</string>
     <string name="wait">^^...Please Wait...^^</string>
     <string name="op_notsucc">Not Successful</string>
+    <string name="admin">Admin</string>
     <string-array name="Contacts">
         <item>Local units</item>
         <item>Housing</item>
