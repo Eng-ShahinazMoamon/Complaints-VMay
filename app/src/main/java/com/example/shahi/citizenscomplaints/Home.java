@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
-    private Button registerbtn, followbtn, newbtn;
+    private Button registerbtn, followbtn, newbtn , adminBut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,10 +16,12 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         newbtn = (Button) findViewById(R.id.btnNew);
         followbtn = (Button) findViewById(R.id.btnfollow);
         registerbtn = (Button) findViewById(R.id.btnregist);
+        adminBut = (Button) findViewById(R.id.btnAdmin);
 
         newbtn.setOnClickListener(this);
         followbtn.setOnClickListener(this);
         registerbtn.setOnClickListener(this);
+        adminBut.setOnClickListener(this);
 
     }
 
@@ -37,6 +39,10 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
             case R.id.btnregist:
                 Intent re = new Intent(Home.this, Register.class);
                 startActivity(re);
+                break;
+            case R.id.btnAdmin:
+                Intent ad = new Intent(Home.this, Admin.class);
+                startActivity(ad);
                 break;
         }
     }

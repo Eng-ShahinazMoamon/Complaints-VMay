@@ -31,6 +31,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         btLog=findViewById(R.id.logQuery);
         btLog.setOnClickListener(this);
         progressDialog =new ProgressDialog(this);
+        firebaseAuthLog = FirebaseAuth.getInstance();
 
 
     }

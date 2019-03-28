@@ -31,6 +31,9 @@
     <string name="wait">^^...Please Wait...^^</string>
     <string name="op_notsucc">Not Successful</string>
     <string name="admin">Admin</string>
+    <string name="e_mail">E-mail</string>
+    <string name="show">Show</string>
+    <string name="to_follow_citizens_complaints">To Follow Citizens Complaints</string>
     <string-array name="Contacts">
         <item>Local units</item>
         <item>Housing</item>

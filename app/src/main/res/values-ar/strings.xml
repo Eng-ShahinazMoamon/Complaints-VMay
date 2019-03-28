@@ -11,7 +11,7 @@
     <string name="citizens_name">اسم المواطن :</string>
     <string name="national_id">الرقم القومي :</string>
     <string name="new_user">مستخدم جديد </string>
-    <string name="password">كلمة السر :</string>
+    <string name="password">كلمة السر</string>
     <string name="phone">"التلفون: "</string>
     <string name="register">"تسجيل "</string>
     <string name="register_new_user">تسجيل مستخدم جديد </string>
@@ -44,5 +44,8 @@
         <item>اخري</item>
     </string-array>
     <string name="admin">"المسؤول "</string>
+    <string name="e_mail">الإيميل</string>
+    <string name="show">عرض الشكاوي</string>
+    <string name="to_follow_citizens_complaints">"متابعة شكاوي المواطنين "</string>
 
 </resources>
