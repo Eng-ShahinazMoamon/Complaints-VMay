@@ -234,7 +234,7 @@ public class NewComp extends AppCompatActivity  implements View.OnClickListener,
             case R.id.btnSent:
                 progressDialog.setMessage("^^...Please Wait...^^");
                 progressDialog.show();
-                if (v.getId() == btnAtt.getId()) {
+             //   if (v.getId() == btnAtt.getId()) {
 
                     //    FirebaseUser user = auth.getCurrentUser();
                     //    String userID = user.getUid();
@@ -278,13 +278,13 @@ public class NewComp extends AppCompatActivity  implements View.OnClickListener,
                         });
                     }
                 }
-                else {
-                    Intent in = new Intent(NewComp.this, Home.class);
-                    Toast.makeText(NewComp.this, R.string.sent_data, Toast.LENGTH_LONG).show();
-                    startActivity(in);
-                }
+//               else if (v.getId() == btnSend.getId()){
+//                    Intent in = new Intent(NewComp.this, Home.class);
+//                    Toast.makeText(NewComp.this, R.string.sent_data, Toast.LENGTH_LONG).show();
+//                    startActivity(in);
+//                }
         }
-    }
+
 //Spinner
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

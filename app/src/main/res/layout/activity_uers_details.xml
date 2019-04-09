@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserDetails">
-
+    <ScrollView
+        android:id="@+id/widget54"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
     <LinearLayout
         android:id="@+id/new_linear"
         android:layout_width="match_parent"
@@ -73,8 +76,27 @@
             android:layout_margin="10dp"
             android:layout_gravity="end"
             android:textSize="17sp"/>
-
-
+        <TextView
+            android:id="@+id/test_user_det5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="end"
+            android:textSize="17sp"/>
+        <TextView
+            android:id="@+id/test_user_det6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="end"
+            android:textSize="17sp"/>
+        <TextView
+            android:id="@+id/test_user_det7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="end"
+            android:textSize="17sp"/>
         <ImageView
             android:id="@+id/user_image"
             android:layout_width="wrap_content"
@@ -92,4 +114,5 @@
             android:textAllCaps="false"/>
 
     </LinearLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

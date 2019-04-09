@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.shahi.citizenscomplaints.R;
@@ -45,14 +46,14 @@ public class ListUserAdapter extends RecyclerView.Adapter<ListUserAdapter.ViewHo
 
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private TextView cName, cId, cAdd, phone;
+        private TextView cName, cId, cAdd, phone ;
 
         ViewHolder(View itemView) {
             super(itemView);
-            cName = (TextView) itemView.findViewById(R.id.list_user1);
-            cId = (TextView) itemView.findViewById(R.id.list_user2);
-            phone = (TextView) itemView.findViewById(R.id.list_user3);
-            cAdd = (TextView) itemView.findViewById(R.id.list_user4);
+            cName =  itemView.findViewById(R.id.list_user1);
+            cId =  itemView.findViewById(R.id.list_user2);
+            phone =  itemView.findViewById(R.id.list_user3);
+            cAdd =  itemView.findViewById(R.id.list_user4);
 
             itemView.setOnClickListener(this);
 
@@ -64,6 +65,11 @@ public class ListUserAdapter extends RecyclerView.Adapter<ListUserAdapter.ViewHo
             String cId = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("userId"));
             String cPhone = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("userPhone"));
             String cAddress = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("userAddress"));
+            //Extra Data for user details page
+            String instName = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("instituationName"));
+            String subName = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("subject"));
+            String desName = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("description"));
+            String comImage = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("comPhoto"));
 
 
             Intent md = new Intent(ss, UserDetails.class);
@@ -71,6 +77,10 @@ public class ListUserAdapter extends RecyclerView.Adapter<ListUserAdapter.ViewHo
             md.putExtra("userId", cId);
             md.putExtra("userPhone", cPhone);
             md.putExtra("userAddress", cAddress);
+            md.putExtra("instituationName", instName);
+            md.putExtra("subject", subName);
+            md.putExtra("description", desName);
+            md.putExtra("comPhoto", comImage);
 
             ss.startActivity(md);
 
