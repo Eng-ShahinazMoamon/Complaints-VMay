@@ -47,5 +47,22 @@
     <string name="e_mail">الإيميل</string>
     <string name="show">عرض الشكاوي</string>
     <string name="to_follow_citizens_complaints">"متابعة شكاوي المواطنين "</string>
+    <string name="details">"تفاصيل "</string>
+    <string name="must_register">"عفواً...لابد من تسجيل الدخول اولا "</string>
+    <string name="cit_address">العنوان :</string>
+    <string name="cit_name">أسم المواطن :</string>
+    <string name="cit_id">الايميل :</string>
+    <string name="text">"نص "</string>
+    <string name="text1">نص</string>
+    <string name="text2">نص</string>
+    <string name="complaints_data">بيانات المواطنين</string>
+    <string name="textview">نص</string>
+    <string name="about_developer">"عن المطور "</string>
+    <string name="your_information">بياناتك</string>
+    <string name="todo">"للعمل "</string>
+    <string name="complaints_details">"تفاصيل الشكوي "</string>
+    <string name="send_to_specialist">أرسال الي الجهة المسؤوله</string>
+    <string name="sent_data">"لقد تم ارسال الشكوي بنجاح "</string>
+    <string name="phone_mess">عفوا رقم الهاتف قصير...فضلا ادخل رقم صحيح</string>
 
 </resources>

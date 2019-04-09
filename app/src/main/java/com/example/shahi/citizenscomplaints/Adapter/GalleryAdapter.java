@@ -1,4 +1,4 @@
-package com.example.shahi.citizenscomplaints;
+package com.example.shahi.citizenscomplaints.Adapter;
 
 import android.content.Context;
 import android.net.Uri;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+
+import com.example.shahi.citizenscomplaints.R;
 
 import java.util.ArrayList;
 

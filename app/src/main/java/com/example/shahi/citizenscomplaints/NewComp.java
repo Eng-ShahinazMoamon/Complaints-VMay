@@ -10,6 +10,7 @@ import android.provider.OpenableColumns;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,12 +23,12 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
+import com.example.shahi.citizenscomplaints.Adapter.GalleryAdapter;
+import com.example.shahi.citizenscomplaints.Model.UserModel;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -36,12 +37,11 @@ import com.google.firebase.storage.UploadTask;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class NewComp extends AppCompatActivity  implements View.OnClickListener, AdapterView.OnItemSelectedListener {
     public EditText edSubj , edDesc;
     private Button btnAtt ,btnSend ;
-    int PICK_IMAGE_MULTIPLE = 0 ;  // you've declared it as ?
+    int PICK_IMAGE_MULTIPLE = 0 ;
     String imageEncoded;
     List<String> imagesEncodedList;
     private GridView gvGallery;
@@ -50,6 +50,8 @@ public class NewComp extends AppCompatActivity  implements View.OnClickListener,
     private StorageReference mStorage;
     private LinearLayout linear ;
     public Spinner spinner;
+    public DatabaseReference mDatabase;
+    private FirebaseAuth firebaseAuth;
 
 
     @Override
@@ -64,17 +66,59 @@ public class NewComp extends AppCompatActivity  implements View.OnClickListener,
         gvGallery = findViewById(R.id.gv);
         linear=findViewById(R.id.new_linear);
         progressDialog=new ProgressDialog(this);
-        mStorage = FirebaseStorage.getInstance().getReference();
+       // mStorage = FirebaseStorage.getInstance().getReference();
         btnAtt.setOnClickListener(this);
         btnSend.setOnClickListener(this);
         spinner.setOnItemSelectedListener(this);
+        firebaseAuth=FirebaseAuth.getInstance();
 
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.Contacts, android.R.layout.simple_spinner_item);
         // attaching data adapter to spinner
         spinner.setAdapter(adapter);
+        mStorage = FirebaseStorage.getInstance().getReference("complaint photo");
+        mDatabase = FirebaseDatabase.getInstance().getReference("complaint photo");
 
     }
 
+
+    private void complaintsDet() {
+        final String sub = edSubj.getText().toString().trim();
+        final String des = edDesc.getText().toString().trim();
+        final String spin = spinner.getSelectedItem().toString().trim();
+
+        if (TextUtils.isEmpty(sub)) {
+            Toast.makeText(this, "Please fill subject problem", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(des)) {
+
+            Toast.makeText(this, "Please fill description problem", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+        if (TextUtils.isEmpty(spin)) {
+
+            Toast.makeText(this, R.string.enter_id, Toast.LENGTH_SHORT).show();
+
+            progressDialog.setMessage("^^...Please Wait...^^");
+            progressDialog.show();
+
+
+        }
+/*
+        FirebaseDatabase database =  FirebaseDatabase.getInstance();
+        UserModel use = new UserModel(sub, des, spin);
+        FirebaseDatabase.getInstance().getReference("Citizens Data")
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .setValue(use);
+        DatabaseReference mRef =  database.getReference();
+        mRef.child("instituationName").setValue(spin);
+        mRef.child("subject").setValue(sub);
+        mRef.child("description").setValue(des);
+*/
+
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         try {
@@ -190,54 +234,68 @@ public class NewComp extends AppCompatActivity  implements View.OnClickListener,
             case R.id.btnSent:
                 progressDialog.setMessage("^^...Please Wait...^^");
                 progressDialog.show();
+                if (v.getId() == btnAtt.getId()) {
 
-                //    FirebaseUser user = auth.getCurrentUser();
-                //    String userID = user.getUid();
+                    //    FirebaseUser user = auth.getCurrentUser();
+                    //    String userID = user.getUid();
 
-                String name = edSubj.getText().toString();
+                    String name = edSubj.getText().toString();
 
-                if (!name.equals("")) {
-                    //At this point we want to check if the user did really selected any
-                    //image or not.
-                    //For that we can debug the size of this list.
-                    //sorry but it take some time
-                    //  Array Item = [first]   [second]   [third]
-                    //  Array Index= [ 0 ]   [1]           [2]
+                    if (!name.equals("")) {
+                        //At this point we want to check if the user did really selected any
+                        //image or not.
+                        //For that we can debug the size of this list.
+                        //sorry but it take some time
+                        //  Array Item = [first]   [second]   [third]
+                        //  Array Index= [ 0 ]   [1]           [2]
 
 
-                    Log.i (name, "send Images"+imagesEncodedList.size());
-                    String path = imagesEncodedList.get(0);//let me get the first item
-                    Uri uri = Uri.fromFile(new File(imagesEncodedList.get(PICK_IMAGE_MULTIPLE)));
-                    StorageReference storageReference = mStorage.child("complaints" + name + edSubj);
-                    progressDialog.dismiss();
+                        Log.i(name, "send Images" + imagesEncodedList.size());
+                        String path = imagesEncodedList.get(0);//let me get the first item
+                        Uri uri = Uri.fromFile(new File(imagesEncodedList.get(PICK_IMAGE_MULTIPLE)));
+                        StorageReference storageReference = mStorage.child("complaints" + name + edSubj);
 
-                    storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            // Get a URL to the uploaded content
-                            Toast.makeText(NewComp.this, "Upload Success", Toast.LENGTH_LONG).show();
-                            Intent in=new Intent(NewComp.this,Home.class);
-                            progressDialog.dismiss();
-                            startActivity(in);
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(NewComp.this, "Upload Failed", Toast.LENGTH_LONG).show();
-                            progressDialog.dismiss();
-                        }
-                    });
+                        storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                            @Override
+                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                // Get a URL to the uploaded content
+                                // Handle successful uploads on complete
+                                Uri downloadUrl=taskSnapshot.getMetadata().getDownloadUrl();
+
+                                progressDialog.setMessage("^^...Please Wait...^^");
+                                progressDialog.show();
+                                Toast.makeText(NewComp.this, R.string.sent_data, Toast.LENGTH_LONG).show();
+                                Intent in = new Intent(NewComp.this, Home.class);
+                                progressDialog.dismiss();
+                                startActivity(in);
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(NewComp.this, R.string.must_register, Toast.LENGTH_LONG).show();
+                                progressDialog.dismiss();
+                            }
+                        });
+                    }
+                }
+                else {
+                    Intent in = new Intent(NewComp.this, Home.class);
+                    Toast.makeText(NewComp.this, R.string.sent_data, Toast.LENGTH_LONG).show();
+                    startActivity(in);
                 }
         }
-
     }
 //Spinner
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String item = parent.getItemAtPosition(position).toString();
+      //  String item = parent.getItemAtPosition(position).toString();
+        mDatabase = FirebaseDatabase.getInstance().getReference("Institution Name");
+        String text = spinner.getSelectedItem().toString();
 
         // Showing selected spinner item
-        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+        Toast.makeText(parent.getContext(), "Selected: " + text, Toast.LENGTH_LONG).show();
+
+
     }
 
     @Override

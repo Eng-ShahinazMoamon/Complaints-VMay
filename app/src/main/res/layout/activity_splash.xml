@@ -15,10 +15,11 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
         <ImageView
             android:id="@+id/logo"
@@ -66,23 +67,25 @@
             android:text="@string/the_official_replied_the_right_of_the_sponsored"
             android:textColor="#300953"
             android:textSize="15sp" />
+
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="167dp"
-            android:layout_marginLeft="167dp"
-            android:layout_marginTop="458dp"
-            android:layout_marginEnd="161dp"
-            android:layout_marginRight="161dp"
-            android:layout_marginBottom="93dp"
-            app:srcCompat="@drawable/flag" />
+            android:layout_marginStart="131dp"
+            android:layout_marginLeft="131dp"
+            android:layout_marginTop="374dp"
+            android:layout_marginEnd="133dp"
+            android:layout_marginRight="133dp"
+            android:layout_marginBottom="87dp"
+            app:srcCompat="@drawable/flag"
+            android:contentDescription="@string/todo" />
 
 
     </RelativeLayout>

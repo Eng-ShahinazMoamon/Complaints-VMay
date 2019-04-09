@@ -71,7 +71,7 @@
                 android:id="@+id/spinner"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:background="@drawable/circle" />
+                android:spinnerMode="dropdown"/>
 
             <TextView
                 android:id="@+id/texSub"
