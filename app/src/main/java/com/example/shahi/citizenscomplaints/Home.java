@@ -8,12 +8,13 @@ import android.view.View;
 import android.widget.Button;
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
-    private Button registerbtn, followbtn, newbtn , adminBut , btnDev;
+    private Button registerbtn, followbtn, newbtn, adminBut, btnDev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        getSupportActionBar().setTitle(R.string.app_name);
         newbtn = (Button) findViewById(R.id.btnNew);
         followbtn = (Button) findViewById(R.id.btnfollow);
         registerbtn = (Button) findViewById(R.id.btnregist);

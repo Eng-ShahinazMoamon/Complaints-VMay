@@ -11,10 +11,11 @@ import com.example.shahi.citizenscomplaints.R;
 
 import java.util.HashMap;
 
-public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHolder>{
+public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHolder> {
 
     private HashMap<String, String> values;
     public Context ss;
+
     public ProfileAdapter(HashMap<String, String> values) {
         this.values = values;
     }
@@ -22,8 +23,8 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
 
     @Override
     public ProfileAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        ss= parent.getContext();
-        return new ProfileAdapter.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.profile_view,parent,false));
+        ss = parent.getContext();
+        return new ProfileAdapter.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.profile_view, parent, false));
     }
 
     @Override
@@ -42,9 +43,9 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
 
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView label , value;
-        ViewHolder(View itemView)
-        {
+        private TextView label, value;
+
+        ViewHolder(View itemView) {
             super(itemView);
             label = (TextView) itemView.findViewById(R.id.acc_text1);
             value = (TextView) itemView.findViewById(R.id.acc_text2);

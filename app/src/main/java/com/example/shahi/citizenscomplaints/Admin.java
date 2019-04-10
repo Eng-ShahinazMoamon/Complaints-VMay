@@ -17,7 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Admin extends AppCompatActivity implements View.OnClickListener {
-    private EditText adminMail , adminPass;
+    private EditText adminMail, adminPass;
     private Button btLog;
     public FirebaseAuth firebaseAuthLog;
     private ProgressDialog progressDialog;
@@ -26,12 +26,13 @@ public class Admin extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
-        firebaseAuthLog=FirebaseAuth.getInstance();
-        adminMail=findViewById(R.id.admin_mail);
-        adminPass=findViewById(R.id.admin_pass);
-        btLog=findViewById(R.id.bt_show);
+        getSupportActionBar().setTitle(R.string.app_name);
+        firebaseAuthLog = FirebaseAuth.getInstance();
+        adminMail = findViewById(R.id.admin_mail);
+        adminPass = findViewById(R.id.admin_pass);
+        btLog = findViewById(R.id.bt_show);
         btLog.setOnClickListener(this);
-        progressDialog =new ProgressDialog(this);
+        progressDialog = new ProgressDialog(this);
         firebaseAuthLog = FirebaseAuth.getInstance();
 
 
@@ -51,16 +52,15 @@ public class Admin extends AppCompatActivity implements View.OnClickListener {
         }
         progressDialog.setMessage("^^...Please Wait...^^");
         progressDialog.show();
-        firebaseAuthLog.signInWithEmailAndPassword(mail,pass)
+        firebaseAuthLog.signInWithEmailAndPassword(mail, pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             progressDialog.dismiss();
                             finish();
-                            startActivity(new Intent(getApplicationContext(),ListUser.class));
-                        }
-                        else {
+                            startActivity(new Intent(getApplicationContext(), ListUser.class));
+                        } else {
                             progressDialog.dismiss();
                             Toast.makeText(Admin.this, "Wrong data...Please try again ", Toast.LENGTH_SHORT).show();
                         }
@@ -71,7 +71,7 @@ public class Admin extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if(v==btLog){
+        if (v == btLog) {
             loginUser();
 
         }

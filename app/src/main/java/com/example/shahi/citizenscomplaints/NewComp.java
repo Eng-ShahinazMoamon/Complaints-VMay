@@ -61,6 +61,7 @@ public class NewComp extends AppCompatActivity implements View.OnClickListener, 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_comp);
+        getSupportActionBar().setTitle(R.string.app_name);
         spinner = findViewById(R.id.spinner);
         edSubj = findViewById(R.id.edSub);
         edDesc = findViewById(R.id.edDesc);
@@ -109,7 +110,7 @@ public class NewComp extends AppCompatActivity implements View.OnClickListener, 
 
 
         }
-        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference updateData = FirebaseDatabase.getInstance().getReference().child("Citizens Data").child(currentFirebaseUser.getUid());
         HashMap<String, Object> childUpdates = new HashMap<>();
         childUpdates.put("institution Name", spinner.getSelectedItem().toString().trim());

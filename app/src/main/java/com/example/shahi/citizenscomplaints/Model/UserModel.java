@@ -11,7 +11,6 @@ public class UserModel {
     private String comPhoto;
 
 
-
     public UserModel(String userName, String userPhone, String userId, String userAddress) {
         this.userName = userName;
         this.userPhone = userPhone;
@@ -22,7 +21,6 @@ public class UserModel {
         this.description = description;
         this.comPhoto = comPhoto;
     }
-
 
 
     public String getUserName() {

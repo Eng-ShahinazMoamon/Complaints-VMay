@@ -10,10 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class UserDetails extends AppCompatActivity implements View.OnClickListener {
-    TextView details1, details2, details3, details4 , details5 ,details6 ,details7;
+    TextView details1, details2, details3, details4, details5, details6, details7;
     ImageView imageComp;
     Button sendComp;
-    String cizNmae, naId, citPho, citAdd , citInst , citSub ,citDes;
+    String cizNmae, naId, citPho, citAdd, citInst, citSub, citDes;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +27,7 @@ public class UserDetails extends AppCompatActivity implements View.OnClickListen
         details5 = findViewById(R.id.test_user_det5);
         details6 = findViewById(R.id.test_user_det6);
         details7 = findViewById(R.id.test_user_det7);
-        imageComp=findViewById(R.id.user_image);
+        imageComp = findViewById(R.id.user_image);
         sendComp = findViewById(R.id.btn_sent_com);
         sendComp.setOnClickListener(this);
 
@@ -86,7 +86,7 @@ public class UserDetails extends AppCompatActivity implements View.OnClickListen
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
         intent.putExtra(Intent.EXTRA_SUBJECT, "Citizen Complaints");
         intent.putExtra(Intent.EXTRA_TEXT, cizNmae + '\n' + naId + '\n' + citAdd + '\n' + citPho +
-                '\n'+ citInst + '\n'+ citSub + '\n'+ citDes);
+                '\n' + citInst + '\n' + citSub + '\n' + citDes);
 
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);

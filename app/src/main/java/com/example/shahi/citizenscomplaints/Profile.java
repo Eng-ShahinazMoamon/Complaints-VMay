@@ -25,7 +25,9 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        recyclerView1 =  findViewById(R.id.recycler1);
+        getSupportActionBar().setTitle(R.string.app_name);
+
+        recyclerView1 = findViewById(R.id.recycler1);
         recyclerView1.setHasFixedSize(true);
         recyclerView1.setLayoutManager(new LinearLayoutManager(this));
         new Profile.GetDataFromFirebase().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
@@ -64,6 +66,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         }*/
         }
     }
+
     public class GetDataFromFirebase extends AsyncTask<Void, Void, Boolean> {
 
         @Override

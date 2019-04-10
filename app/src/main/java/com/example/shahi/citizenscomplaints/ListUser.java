@@ -24,11 +24,12 @@ public class ListUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_user);
+        getSupportActionBar().setTitle(R.string.app_name);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_user);
         // Read from the database
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-         mDatabaseReference = database.getReference("Citizens Data");
+        mDatabaseReference = database.getReference("Citizens Data");
         mDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -36,9 +37,10 @@ public class ListUser extends AppCompatActivity {
 
                 if (values != null) {
                     recyclerView.setAdapter(new ListUserAdapter(values));
-                    Log.v("load db Failed",dataSnapshot.toString()+"");
+                    Log.v("load db Failed", dataSnapshot.toString() + "");
                 }
             }
+
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
@@ -47,7 +49,7 @@ public class ListUser extends AppCompatActivity {
         });
     }
 
-    private class GetDataFromFirebase extends AsyncTask<Void,Void,Boolean>{
+    private class GetDataFromFirebase extends AsyncTask<Void, Void, Boolean> {
 
         @Override
         protected void onPreExecute() {

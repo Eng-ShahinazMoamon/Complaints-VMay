@@ -46,14 +46,14 @@ public class ListUserAdapter extends RecyclerView.Adapter<ListUserAdapter.ViewHo
 
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private TextView cName, cId, cAdd, phone ;
+        private TextView cName, cId, cAdd, phone;
 
         ViewHolder(View itemView) {
             super(itemView);
-            cName =  itemView.findViewById(R.id.list_user1);
-            cId =  itemView.findViewById(R.id.list_user2);
-            phone =  itemView.findViewById(R.id.list_user3);
-            cAdd =  itemView.findViewById(R.id.list_user4);
+            cName = itemView.findViewById(R.id.list_user1);
+            cId = itemView.findViewById(R.id.list_user2);
+            phone = itemView.findViewById(R.id.list_user3);
+            cAdd = itemView.findViewById(R.id.list_user4);
 
             itemView.setOnClickListener(this);
 
