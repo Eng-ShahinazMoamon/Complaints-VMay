@@ -59,20 +59,20 @@ public class UserDetails extends AppCompatActivity implements View.OnClickListen
         }
         //////////////////////////////////
         citInst = null;
-        if (md.hasExtra("instituationName")) {
-            citInst = md.getStringExtra("instituationName");
+        if (md.hasExtra("institution Name")) {
+            citInst = md.getStringExtra("institution Name");
             details5.setText(citInst);
 
         }
         citSub = null;
-        if (md.hasExtra("subject")) {
-            citSub = md.getStringExtra("subject");
+        if (md.hasExtra("Subject")) {
+            citSub = md.getStringExtra("Subject");
             details6.setText(citSub);
 
         }
         citDes = null;
-        if (md.hasExtra("description")) {
-            citDes = md.getStringExtra("description");
+        if (md.hasExtra("Description")) {
+            citDes = md.getStringExtra("Description");
             details7.setText(citDes);
 
         }

@@ -66,9 +66,9 @@ public class ListUserAdapter extends RecyclerView.Adapter<ListUserAdapter.ViewHo
             String cPhone = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("userPhone"));
             String cAddress = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("userAddress"));
             //Extra Data for user details page
-            String instName = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("instituationName"));
-            String subName = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("subject"));
-            String desName = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("description"));
+            String instName = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("institution Name"));
+            String subName = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("Subject"));
+            String desName = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("Description"));
             String comImage = String.valueOf(values.get(values.keySet().toArray()[getAdapterPosition()]).get("comPhoto"));
 
 
@@ -77,9 +77,9 @@ public class ListUserAdapter extends RecyclerView.Adapter<ListUserAdapter.ViewHo
             md.putExtra("userId", cId);
             md.putExtra("userPhone", cPhone);
             md.putExtra("userAddress", cAddress);
-            md.putExtra("instituationName", instName);
-            md.putExtra("subject", subName);
-            md.putExtra("description", desName);
+            md.putExtra("institution Name", instName);
+            md.putExtra("Subject", subName);
+            md.putExtra("Description", desName);
             md.putExtra("comPhoto", comImage);
 
             ss.startActivity(md);
