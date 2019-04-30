@@ -50,9 +50,8 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
                 startActivity(ad);
                 break;
             case R.id.btn_deve:
-                Uri uri_f = Uri.parse("https://www.facebook.com/Eng.shahinaz.moamen");
-                Intent int_f = new Intent(Intent.ACTION_VIEW, uri_f);
-                startActivity(int_f);
+                Intent dev = new Intent(Home.this, AboutDeveloper.class);
+                startActivity(dev);
         }
     }
 }

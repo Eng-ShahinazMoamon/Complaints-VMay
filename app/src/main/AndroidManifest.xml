@@ -30,7 +30,8 @@
         <activity android:name=".Profile" />
         <activity android:name=".Admin" />
         <activity android:name=".ListUser" />
-        <activity android:name=".UserDetails"></activity>
+        <activity android:name=".UserDetails" />
+        <activity android:name=".AboutDeveloper"></activity>
     </application>
 
 </manifest>

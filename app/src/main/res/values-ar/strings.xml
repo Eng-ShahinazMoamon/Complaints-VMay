@@ -12,7 +12,6 @@
     <string name="national_id">الرقم القومي :</string>
     <string name="new_user">مستخدم جديد </string>
     <string name="password">كلمة السر</string>
-    <string name="phone">"التلفون: "</string>
     <string name="register">"تسجيل "</string>
     <string name="register_new_user">تسجيل مستخدم جديد </string>
     <string name="citizens_id">الرقم القومي :</string>
@@ -64,5 +63,9 @@
     <string name="send_to_specialist">أرسال الي الجهة المسؤوله</string>
     <string name="sent_data">"لقد تم ارسال الشكوي بنجاح "</string>
     <string name="phone_mess">عفوا رقم الهاتف قصير...فضلا ادخل رقم صحيح</string>
+    <string name="developer_shahinaz_moamen_radwan">"المهندسة : شاهيناز مؤمن رضوان "</string>
+    <string name="phone_no_01099884939">"تليفون : 01099884939 "</string>
+    <string name="email_shahinazmoamen_gmail_com">إيميل : shahinazmoamen@gmail.com</string>
+    <string name="phone">التليفون :</string>
 
 </resources>

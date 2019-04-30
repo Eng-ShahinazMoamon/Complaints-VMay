@@ -261,6 +261,7 @@ public class NewComp extends AppCompatActivity implements View.OnClickListener, 
                             // Get a URL to the uploaded content
                             // Handle successful uploads on complete
                             Uri downloadUrl = taskSnapshot.getMetadata().getDownloadUrl();
+                           String  generatedFilePath = downloadUrl.toString(); /// The string(file link) that you need
                             complaintsDet();
                             progressDialog.setMessage("^^...Please Wait...^^");
                             progressDialog.show();

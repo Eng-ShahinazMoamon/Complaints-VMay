@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 public class UserDetails extends AppCompatActivity implements View.OnClickListener {
     TextView details1, details2, details3, details4, details5, details6, details7;
     ImageView imageComp;
@@ -30,7 +33,10 @@ public class UserDetails extends AppCompatActivity implements View.OnClickListen
         imageComp = findViewById(R.id.user_image);
         sendComp = findViewById(R.id.btn_sent_com);
         sendComp.setOnClickListener(this);
-
+//       StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+//        GlideApp.with(this /* context */)
+//                .load(storageReference)
+//                .into(imageComp);
         Intent md = getIntent();
         cizNmae = null;
 

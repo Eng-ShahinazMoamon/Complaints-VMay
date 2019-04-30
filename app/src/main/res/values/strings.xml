@@ -63,4 +63,7 @@
     <string name="send_to_specialist">Send to Specialist</string>
     <string name="sent_data">Your Data send succesfully</string>
     <string name="phone_mess">the phone number so short</string>
+    <string name="developer_shahinaz_moamen_radwan">Developer : Shahinaz Moamen Radwan</string>
+    <string name="phone_no_01099884939">Phone No : 01099884939</string>
+    <string name="email_shahinazmoamen_gmail_com">Email: shahinazmoamen@gmail.com</string>
 </resources>
